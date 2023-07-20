@@ -9,6 +9,7 @@ const kafka = new Kafka(getConfig());
 const rapid = new Rapid(kafka, process.env.KAFKA_RAPID_TOPIC!);
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  console.log(`Publishing ${req.body}`);
   await rapid.publish(req.body);
   return res.json([true]);
 };
