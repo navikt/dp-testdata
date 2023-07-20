@@ -1,0 +1,27 @@
+{
+  "title": "Vedtak",
+  "type": "object",
+  "required": [
+    "title"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title",
+      "default": "A new task"
+    },
+    "done": {
+      "type": "boolean",
+      "title": "Done?",
+      "default": false
+    },
+    "fruit": {
+      "type": "string",
+      "title": "Fruit",
+      "enum": [
+        "pineapple",
+        "banana"
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+/* card.module.css */
+
+.card {
+    list-style: none;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1.6rem;
+    margin: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    margin-bottom: 8px;
+}
+
+/* To display the cards in a grid */
+.cardGrid {
+    padding: 0 1.6rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, auto) ); /* Adjust the minmax width as needed */
+    grid-gap: 16px;
+}

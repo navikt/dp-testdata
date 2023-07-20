@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/RapporteringspliktDatoHendelse",
+  "definitions": {
+    "RapporteringspliktDatoHendelse": {
+      "type": "object",
+      "properties": {
+        "@event_name": {
+          "type": "string",
+          "const": "behov",
+          "default": "behov",
+          "readOnly": true
+        },
+        "@behov": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "Søknadstidspunkt",
+            "Virkningsdatoer"
+          ],
+          "readOnly": true
+        },
+        "@opprettet": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "ident": {
+          "type": "string",
+          "format": "integer"
+        },
+        "Virkningsdatoer": {
+          "$ref": "#/definitions/Virkningsdatoer"
+        },
+        "Søknadstidspunkt": {
+          "$ref": "#/definitions/Søknadstidspunkt"
+        },
+        "@løsning": {
+          "$ref": "#/definitions/Løsning"
+        },
+        "@final": {
+          "type": "boolean",
+          "default": "true",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "@behov",
+        "@event_name",
+        "@final",
+        "@løsning",
+        "@opprettet",
+        "Søknadstidspunkt",
+        "Virkningsdatoer",
+        "ident"
+      ],
+      "title": "RapporteringspliktDatoHendelse"
+    },
+    "Løsning": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Virkningsdatoer": {
+          "$ref": "#/definitions/Virkningsdatoer"
+        },
+        "Søknadstidspunkt": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "Søknadstidspunkt",
+        "Virkningsdatoer"
+      ],
+      "title": "Løsning"
+    },
+    "Virkningsdatoer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ønsketdato": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "ønsketdato"
+      ],
+      "title": "Virkningsdatoer"
+    },
+    "Søknadstidspunkt": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "søknad_uuid": {
+          "type": "string",
+          "format": "uuid"
+        }
+      },
+      "required": [
+        "søknad_uuid"
+      ],
+      "title": "Søknadstidspunkt"
+    }
+  }
+}
