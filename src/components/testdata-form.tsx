@@ -8,27 +8,26 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { IChangeEvent } from "@rjsf/core";
 
-const log = (type: string) => console.log.bind(console, type);
-
 interface TestdataFormProps {
   schema: RJSFSchema;
 }
 
-const showData = (
-  a: IChangeEvent<any, RJSFSchema, any>,
-  b: React.FormEvent<any>,
-) => {
-  console.log({ a, b });
-  console.log(a.formData);
-};
+const showData = async (event: IChangeEvent<any, RJSFSchema, any>) => {
+  const response = await fetch("/api/publish", {
+    method: "POST",
+    body: JSON.stringify(event.formData),
+  });
 
+  if (response.ok) console.log(await response.json());
+  if (!response.ok) console.error(await response.text());
+};
 export default function TestdataForm({ schema }: TestdataFormProps) {
   return (
     <Form
       schema={schema}
       validator={validator}
       onSubmit={showData}
-      onError={log("errors")}
+      onError={console.error}
     />
   );
 }

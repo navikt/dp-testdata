@@ -2,7 +2,7 @@ import { schemas } from "@/lib/schemas";
 import styles from "./page.module.css";
 import TestdataForm from "@/components/testdata-form";
 import { GetServerSideProps } from "next";
-import type { JsonSchemaFile } from "@/lib/jsonSchemaFile";
+import type { JsonSchemaFile } from "@/lib/types/jsonSchemaFile";
 import { Typography } from "@mui/material";
 
 export const getServerSideProps: GetServerSideProps<PageProps> = async () => ({
@@ -20,7 +20,7 @@ export default function Home({ schemas }: PageProps) {
       <ul className={styles.cardGrid}>
         {schemas &&
           schemas.map((schema) => (
-            <li key={schema.content.title} className={styles.card}>
+            <li key={schema.filename} className={styles.card}>
               <TestdataForm schema={schema.content} />
             </li>
           ))}

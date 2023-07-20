@@ -11,6 +11,13 @@
           "default": "behov",
           "readOnly": true
         },
+        "ident": {
+          "type": "string",
+          "format": "integer"
+        },
+        "@løsning": {
+          "$ref": "#/definitions/Løsning"
+        },
         "@behov": {
           "type": "array",
           "items": {
@@ -22,28 +29,11 @@
           ],
           "readOnly": true
         },
-        "@opprettet": {
-          "type": "string",
-          "format": "date-time",
-          "readOnly": true
-        },
-        "ident": {
-          "type": "string",
-          "format": "integer"
-        },
-        "Virkningsdatoer": {
-          "$ref": "#/definitions/Virkningsdatoer"
-        },
-        "Søknadstidspunkt": {
-          "$ref": "#/definitions/Søknadstidspunkt"
-        },
-        "@løsning": {
-          "$ref": "#/definitions/Løsning"
-        },
         "@final": {
           "type": "boolean",
           "default": "true",
-          "readOnly": true
+          "readOnly": true,
+          "ui:foo": "bar"
         }
       },
       "required": [
@@ -81,28 +71,14 @@
       "additionalProperties": false,
       "properties": {
         "ønsketdato": {
+          "title": "Ønsker dagpenger fra",
           "type": "string",
           "format": "date"
         }
       },
       "required": [
         "ønsketdato"
-      ],
-      "title": "Virkningsdatoer"
-    },
-    "Søknadstidspunkt": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "søknad_uuid": {
-          "type": "string",
-          "format": "uuid"
-        }
-      },
-      "required": [
-        "søknad_uuid"
-      ],
-      "title": "Søknadstidspunkt"
+      ]
     }
   }
 }

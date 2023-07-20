@@ -1,0 +1,51 @@
+apiVersion: nais.io/v1alpha1
+kind: Application
+metadata:
+  name: dp-testdata
+  namespace: teamdagpenger
+  labels:
+    team: teamdagpenger
+spec:
+  image: {{image}}
+  port: 3000
+  liveness:
+    path: "/api/internal/ishealthy"
+  readiness:
+    path: "/api/internal/ishealthy"
+  startup:
+    path: "/api/internal/ishealthy"
+    initialDelay: 1
+    periodSeconds: 3
+    failureThreshold: 10
+  replicas:
+    min: 1
+    max: 1
+    disableAutoScaling: true
+  prometheus:
+    enabled: false
+  resources:
+    limits:
+      memory: 256Mi
+    requests:
+      cpu: 50m
+      memory: 128Mi
+  env:
+    - name: KAFKA_RAPID_TOPIC
+      value: {{rapid.topic}}
+    - name: KAFKA_CONSUMER_GROUP_ID
+      value: {{rapid.consumer}}
+  ingresses:
+    - {{ingress}}
+  kafka:
+    pool: nav-dev
+  azure:
+    application:
+      enabled: true
+      allowAllUsers: false
+      tenant: nav.no
+      claims:
+        groups:
+          - id: 4edb2ce5-4f0e-4f6f-9b82-b8e75e9dd09e # teamdagpenger
+    sidecar:
+      enabled: true
+      autoLogin: true

@@ -1,0 +1,10 @@
+ingress: https://dp-testdata.intern.dev.nav.no
+azure:
+  allowAllUsers: true
+  claims:
+    groups:
+      - id: 62cfb23f-f6bf-4208-840e-f85c45e32503
+
+rapid:
+  consumer: dp-testdata-v1
+  topic: teamdagpenger.rapid.v1

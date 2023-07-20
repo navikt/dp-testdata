@@ -27,7 +27,8 @@
       "description": "JSON av søknaden som er arkviert",
       "properties": {
         "søknad_uuid": {
-          "type": "string"
+          "type": "string",
+          "format": "uuid"
         }
       },
       "required": [

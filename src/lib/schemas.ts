@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { JsonSchemaFile } from "@/lib/jsonSchemaFile";
+import { JsonSchemaFile } from "@/lib/types/jsonSchemaFile";
 
 //export const schemas = readJsonFilesFromFolder("./src/schemas/");
 export const schemas = () => readJsonFilesFromFolder("./src/schemas/");
