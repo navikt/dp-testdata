@@ -1,11 +1,11 @@
 import { schemas } from "@/lib/schemas";
 import styles from "./page.module.css";
 import TestdataForm from "@/components/testdata-form";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import type { JsonSchemaFile } from "@/lib/types/jsonSchemaFile";
 import { Typography } from "@mui/material";
 
-export const getServerSideProps: GetServerSideProps<PageProps> = async () => ({
+export const getStaticProps: GetStaticProps<PageProps> = async () => ({
   props: { schemas: schemas() },
 });
 
