@@ -1,6 +1,6 @@
 ingress: https://dp-testdata.intern.dev.nav.no
 azure:
-  allowAllUsers: true
+  allowAllUsers: false
   claims:
     groups:
       - id: 62cfb23f-f6bf-4208-840e-f85c45e32503
