@@ -1,9 +1,10 @@
 ingress: https://dp-testdata.intern.dev.nav.no
 azure:
   allowAllUsers: false
+  tenant: nav.no
   claims:
     groups:
-      - id: 62cfb23f-f6bf-4208-840e-f85c45e32503
+      - id: 4edb2ce5-4f0e-4f6f-9b82-b8e75e9dd09e
 
 rapid:
   consumer: dp-testdata-v1
