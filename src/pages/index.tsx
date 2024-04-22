@@ -8,7 +8,7 @@ import TabContext from '@mui/lab/TabContext'
 import TabList from '@mui/lab/TabList'
 import TabPanel from '@mui/lab/TabPanel'
 import { RJSFSchema } from '@rjsf/utils'
-import TestdataForm from '@/components/testdata-form'
+import MeldingForm from '@/components/melding-form'
 
 export const getStaticProps: GetStaticProps<PageProps> = async () => ({
   props: { schemas: schemas },
@@ -44,7 +44,7 @@ export default function Home({ schemas }: PageProps) {
           {schemas.map((schema) => {
             return (
               <TabPanel key={schema.title} value={schema.title}>
-                <TestdataForm schema={schema} />
+                <MeldingForm schema={schema} />
               </TabPanel>
             )
           })}
