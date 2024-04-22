@@ -8,7 +8,7 @@ import TabContext from '@mui/lab/TabContext'
 import TabList from '@mui/lab/TabList'
 import TabPanel from '@mui/lab/TabPanel'
 import { RJSFSchema } from '@rjsf/utils'
-import MeldingForm from '@/components/melding-form'
+import { MeldingForm } from '@/components/melding-form'
 
 export const getStaticProps: GetStaticProps<PageProps> = async () => ({
   props: { schemas: schemas },
