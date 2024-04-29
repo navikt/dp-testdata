@@ -20,9 +20,15 @@ export const OrkestratorBehov: RJSFSchema = {
     ident: {
       type: 'string',
     },
-    søknad_id: {
+    søknadId: {
+      type: 'string',
+    },
+    behandlingId: {
+      type: 'string',
+    },
+    behovId: {
       type: 'string',
     },
   },
-  required: ['@event_name', '@behov', 'ident', 'søknad_id'],
+  required: ['@event_name', '@behov', 'ident', 'søknadId', 'behandlingId', 'behovId'],
 }
