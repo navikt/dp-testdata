@@ -22,9 +22,9 @@ export const RapporteringFabrikk: RJSFSchema = {
     fraOgMed: {
       type: 'string',
     },
-    behovId: {
+    '@behovId': {
       type: 'string',
     },
   },
-  required: ['@event_name', '@behov', 'ident', 'fraOgMed', 'behovId'],
+  required: ['@event_name', '@behov', 'ident', 'fraOgMed', '@behovId'],
 }
