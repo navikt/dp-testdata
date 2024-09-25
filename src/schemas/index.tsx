@@ -4,6 +4,7 @@ import { RapporteringspliktDato } from './rapporteringsplikt_dato'
 import { OrkestratorBehov } from './orkestrator-behov'
 import { RJSFSchema } from '@rjsf/utils'
 import { RapporteringFabrikk } from './rapportering-fabrikk'
+import { ArenaVedtak } from './arena-vedtak'
 
 export const schemas: RJSFSchema[] = [
   Test,
@@ -11,4 +12,5 @@ export const schemas: RJSFSchema[] = [
   RapporteringspliktDato,
   OrkestratorBehov,
   RapporteringFabrikk,
+  ArenaVedtak,
 ]
