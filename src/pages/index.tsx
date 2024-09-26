@@ -24,7 +24,6 @@ export default function Home({ schemas }: PageProps) {
   const handleChange = (_: React.SyntheticEvent, newValue: string) => {
     setValue(newValue)
   }
-  console.log('schemas', schemas)
 
   return (
     <main className={styles.main}>

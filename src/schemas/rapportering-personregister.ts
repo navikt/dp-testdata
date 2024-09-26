@@ -1,7 +1,36 @@
 import { RJSFSchema } from '@rjsf/utils'
 
-export const ArenaVedtak: RJSFSchema = {
-  title: 'Arena Vedtak',
+export const PersonregisterSøknad: RJSFSchema = {
+  title: 'Søknad',
+  type: 'object',
+  properties: {
+    '@id': {
+      type: 'string',
+      default: '675eb2c2-bfba-4939-926c-cf5aac73d163',
+    },
+    '@event_name': {
+      type: 'string',
+      const: 'søknad_innsendt_varsel',
+      default: 'søknad_innsendt_varsel',
+      readOnly: true,
+    },
+    ident: {
+      type: 'string',
+    },
+    søknadId: {
+      type: 'string',
+      default: '123e4567-e89b-12d3-a456-426614174000',
+    },
+    søknadstidspunkt: {
+      type: 'string',
+      default: '2024-09-01T11:00:27.899791748',
+    },
+  },
+  required: ['@event_name', '@id', 'ident', 'søknadId', 'søknadstidspunkt'],
+}
+
+export const PersonregisterVedtak: RJSFSchema = {
+  title: 'Vedtak - Arena',
   type: 'object',
   properties: {
     table: {
