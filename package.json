@@ -11,32 +11,32 @@
     "test": "next build # Godt nok for nå"
   },
   "dependencies": {
-    "@fontsource/roboto": "^5.0.5",
-    "@mui/lab": "^5.0.0-alpha.170",
-    "@rjsf/core": "^5.10.0",
-    "@rjsf/mui": "^5.10.0",
+    "@fontsource/roboto": "^5.1.1",
+    "@mui/lab": "^6.0.0-beta.24",
+    "@rjsf/core": "^5.24.1",
+    "@rjsf/mui": "^5.24.1",
     "@rjsf/utils": "^5.10.0",
-    "@rjsf/validator-ajv8": "^5.10.0",
-    "@types/react": "18.2.21",
-    "@types/react-dom": "18.2.7",
-    "eslint": "8.45.0",
-    "eslint-config-next": "13.4.19",
+    "@rjsf/validator-ajv8": "^5.24.1",
+    "@types/react": "19.0.7",
+    "@types/react-dom": "19.0.3",
+    "eslint": "9.18.0",
+    "eslint-config-next": "15.1.6",
     "kafkajs": "^2.2.4",
     "kafkajs-snappy": "^1.1.0",
-    "next": "14.2.21",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "5.1.6",
-    "uuid": "^9.0.0"
+    "next": "15.1.6",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "typescript": "5.7.3",
+    "uuid": "^11.0.5"
   },
   "devDependencies": {
-    "@types/node": "^20.5.6",
-    "@types/uuid": "^9.0.2",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.2.3",
-    "prettier": "^3.0.0"
+    "@types/node": "^22.10.7",
+    "@types/uuid": "^10.0.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.1",
+    "prettier": "^3.4.2"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
