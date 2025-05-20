@@ -1,30 +1,26 @@
 import { RJSFSchema } from '@rjsf/utils'
 
-export const RapporteringFabrikk: RJSFSchema = {
-  title: 'Rapportering Fabrikk',
+export const VedtakFattet: RJSFSchema = {
+  title: 'Vedtak fattet',
   type: 'object',
   properties: {
     '@event_name': {
       type: 'string',
-      const: 'behov',
-      default: 'behov',
+      const: 'vedtak_fattet',
+      default: 'vedtak_fattet',
       readOnly: true,
     },
-    '@behov': {
-      type: 'string',
-      const: 'ny_rapportering',
-      default: 'ny_rapportering',
-    },
-
     ident: {
       type: 'string',
     },
-    fraOgMed: {
+    gyldigFraOgMed: {
       type: 'string',
+      default: '2025-05-20',
     },
-    '@behovId': {
+    gyldigTilOgMed: {
       type: 'string',
+      default: '2026-05-20',
     },
   },
-  required: ['@event_name', '@behov', 'ident', 'fraOgMed', '@behovId'],
+  required: ['@event_name', 'ident', 'gyldigFraOgMed', 'gyldigTilOgMed'],
 }
