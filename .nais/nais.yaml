@@ -49,3 +49,11 @@ spec:
     sidecar:
       enabled: true
       autoLogin: true
+  observability:
+    logging:
+      destinations:
+        - id: loki
+        - id: elastic
+    autoInstrumentation:
+      enabled: true
+      runtime: java
