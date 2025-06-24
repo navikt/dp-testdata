@@ -15,44 +15,27 @@ export const VedtakFattet: RJSFSchema = {
       type: 'string',
       default: '3fa85f64-5717-4562-b3fc-2c963f66afa6',
     },
-    vedtakstidspunkt: {
-      type: 'string',
-      format: 'date-time',
-    },
     ident: {
       type: 'string',
     },
-
-    opplysninger: {
-      type: 'array',
-      title: 'Opplysninger',
-      minItems: 1,
-      maxItems: 1,
-
-      items: {
-        type: 'object',
-        title: '',
-        properties: {
-          gyldigFraOgMed: {
-            type: 'string',
-            format: 'date',
-            title: 'Gyldig fra og med',
-          },
-          gyldigTilOgMed: {
-            type: 'string',
-            format: 'date',
-            title: 'Gyldig til og med',
-          },
+    virkningsdato: {
+      type: 'string',
+      format: 'date',
+    },
+    behandletHendelse: {
+      type: 'object',
+      properties: {
+        type: {
+          type: 'string',
+          default: 'Søknad',
         },
-        required: ['gyldigFraOgMed', 'gyldigTilOgMed'],
+        id: {
+          type: 'string',
+          format: 'uuid',
+          default: '123e4567-e89b-12d3-a456-426614174000',
+        },
       },
     },
   },
-  required: [
-    '@event_name',
-    'behandlingId',
-    'vedtakstidspunkt',
-    'opplysninger',
-    'ident',
-  ],
+  required: ['@event_name', 'behandlingId', 'ident', 'virkningsdato'],
 }
