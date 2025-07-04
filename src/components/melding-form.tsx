@@ -57,9 +57,6 @@ export function MeldingForm({ schema }: MeldingFormProps) {
     'ui:submitButtonOptions': {
       submitText: status === 'loading' ? 'Sender...' : 'Send melding',
     },
-    behandletHendelse: {
-      'ui:widget': 'hidden',
-    },
   }
 
   return (

@@ -27,7 +27,9 @@ export const VedtakFattet: RJSFSchema = {
       properties: {
         type: {
           type: 'string',
+          const: 'Søknad',
           default: 'Søknad',
+          readOnly: true,
         },
         id: {
           type: 'string',
