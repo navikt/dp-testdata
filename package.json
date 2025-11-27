@@ -14,7 +14,7 @@
     "@fontsource/roboto": "^5.0.5",
     "@mui/lab": "^5.0.0-alpha.170",
     "@rjsf/core": "^5.10.0",
-    "@rjsf/mui": "^5.10.0",
+    "@rjsf/mui": "^6.1.1",
     "@rjsf/utils": "^5.10.0",
     "@rjsf/validator-ajv8": "^5.10.0",
     "@types/react": "18.2.21",
