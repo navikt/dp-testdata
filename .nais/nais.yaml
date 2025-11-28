@@ -6,7 +6,7 @@ metadata:
   labels:
     team: teamdagpenger
 spec:
-  image: {{image}}
+  image: "{{image}}"
   port: 3000
   liveness:
     path: "/api/internal/ishealthy"
@@ -31,9 +31,9 @@ spec:
       memory: 128Mi
   env:
     - name: KAFKA_RAPID_TOPIC
-      value: {{rapid.topic}}
+      value: "{{rapid.topic}}"
     - name: KAFKA_CONSUMER_GROUP_ID
-      value: {{rapid.consumer}}
+      value: "{{rapid.consumer}}"
   ingresses:
     - {{ingress}}
   kafka:
@@ -49,3 +49,11 @@ spec:
     sidecar:
       enabled: true
       autoLogin: true
+  observability:
+    logging:
+      destinations:
+        - id: loki
+        - id: elastic
+    autoInstrumentation:
+      enabled: true
+      runtime: java

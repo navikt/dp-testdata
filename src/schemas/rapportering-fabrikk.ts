@@ -1,30 +1,43 @@
 import { RJSFSchema } from '@rjsf/utils'
+import { format } from 'path'
 
-export const RapporteringFabrikk: RJSFSchema = {
-  title: 'Rapportering Fabrikk',
+export const VedtakFattet: RJSFSchema = {
+  title: 'Vedtak fattet',
   type: 'object',
   properties: {
     '@event_name': {
       type: 'string',
-      const: 'behov',
-      default: 'behov',
+      const: 'vedtak_fattet',
+      default: 'vedtak_fattet',
       readOnly: true,
     },
-    '@behov': {
+    behandlingId: {
       type: 'string',
-      const: 'ny_rapportering',
-      default: 'ny_rapportering',
+      default: '3fa85f64-5717-4562-b3fc-2c963f66afa6',
     },
-
     ident: {
       type: 'string',
     },
-    fraOgMed: {
+    virkningsdato: {
       type: 'string',
+      format: 'date',
     },
-    '@behovId': {
-      type: 'string',
+    behandletHendelse: {
+      type: 'object',
+      properties: {
+        type: {
+          type: 'string',
+          const: 'Søknad',
+          default: 'Søknad',
+          readOnly: true,
+        },
+        id: {
+          type: 'string',
+          format: 'uuid',
+          default: '123e4567-e89b-12d3-a456-426614174000',
+        },
+      },
     },
   },
-  required: ['@event_name', '@behov', 'ident', 'fraOgMed', '@behovId'],
+  required: ['@event_name', 'behandlingId', 'ident', 'virkningsdato'],
 }
