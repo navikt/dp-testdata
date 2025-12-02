@@ -11,7 +11,7 @@
     "test": "next build # Godt nok for nå"
   },
   "dependencies": {
-    "@fontsource/roboto": "^5.0.5",
+    "@fontsource/roboto": "^5.2.9",
     "@mui/lab": "^5.0.0-alpha.170",
     "@rjsf/core": "^5.10.0",
     "@rjsf/mui": "^5.10.0",
